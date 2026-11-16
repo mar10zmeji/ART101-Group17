@@ -28,7 +28,6 @@ function updPage(name, desc, img) { //location will be added later
 
 let count = 0
 
-console.log(items.length)
 $("#left").click(function(){
     if (count > 0) {
         count-=1;
