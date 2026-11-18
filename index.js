@@ -15,7 +15,7 @@ let items = [{
         image: "images/PlcH.png",
         desc: "third description",
         location: 0
-    }]
+    }];
    
 
 
@@ -26,12 +26,12 @@ function updPage(name, desc, img) { //location will be added later
 
 };
 
-let count = 0
+let count = 0;
 
 $("#left").click(function(){
     if (count > 0) {
         count-=1;
-        let thC = items[count-1]
+        let thC = items[count-1];
         updPage(thC.name, thC.desc, thC.image);
     }
 });
@@ -39,7 +39,7 @@ $("#left").click(function(){
 $("#right").click(function(){
     if (count < items.length) {
         count++;
-        let thC = items[count-1]
+        let thC = items[count-1];
         updPage(thC.name, thC.desc, thC.image);
 
 
