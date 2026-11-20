@@ -1,4 +1,4 @@
-html {background-image: url("images/protoBG.png"); background-attachment: fixed; background-size: cover; background-repeat: no-repeat; background-color: cornsilk;}
+html {background-image: url("images/draftBG.png"); background-attachment: fixed; background-size: cover; background-repeat: no-repeat; background-color: cornsilk;}
 
 body { font-size: larger;}
 
@@ -14,3 +14,9 @@ body { font-size: larger;}
 #map img {height: 90%; width: 90%; margin-left: 5%;}
 
 button {background-color: rgb(255, 159, 123); text-align: center;}
+
+#title {
+    height: 100vh; width: 100vw; position: absolute; 
+}
+
+.invis {display: none;}

@@ -45,3 +45,11 @@ $("#right").click(function(){
 
     }
 });
+
+$("#title").click(function(){
+    $(this).fadeOut(1500);
+    setTimeout(function(){
+          $(this).toggleClass("invis");
+    },1500)
+  
+})
