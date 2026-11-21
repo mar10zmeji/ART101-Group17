@@ -20,3 +20,4 @@ button {background-color: rgb(255, 159, 123); text-align: center;}
 }
 
 .invis {display: none;}
+#credit { align-content:center; height: 600px; width: 800px; background-color: rgb(250, 235, 215); background-blend-mode: overlay;}
