@@ -2,28 +2,28 @@ let items = [
     {
         name: "McHenry Graffiti",
         image: "images/mchenry-graffiti.png",
-        desc: "description placeholder",
+        desc: "Graffiti on a silent study desk in McHenry library.",
         x: 55,
         y: 45
     },
     {
         name: "McHenry Sticker",
         image: "images/mchenry-sticker.png",
-        desc: "description placeholder",
+        desc: "Sticker on a bench outside of McHenry library.",
         x: 55,
         y: 40
     },
     {
         name: "Merrill Magazine",
         image: "images/merril-magazine.png",
-        desc: "description placeholder",
+        desc: "Magazine found in the LALs department at Merril.",
         x: 80,
         y: 23
     },
     {
         name: "Porter Flyer",
         image: "images/porter-flyer.png",
-        desc: "description placeholder",
+        desc: "Flyer found in a Porter dorm hallway.",
         x: 25,
         y: 45
     }
