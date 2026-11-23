@@ -1,55 +1,90 @@
-let items = [{
-        name: "placeholder 1",
-        image: "images/PlcH.png",
-        desc: "first description",
-        location: 0
+let items = [
+    {
+        name: "McHenry Graffiti",
+        image: "images/mchenry-graffiti.png",
+        desc: "description placeholder",
+        x: 55,
+        y: 45
     },
     {
-        name: "placeholder 2",
-        image: "images/PlcH.png",
-        desc: "second description",
-        location: 0
+        name: "McHenry Sticker",
+        image: "images/mchenry-sticker.png",
+        desc: "description placeholder",
+        x: 55,
+        y: 40
     },
     {
-        name: "placeholder 3",
-        image: "images/PlcH.png",
-        desc: "third description",
-        location: 0
-    }];
-   
+        name: "Merrill Magazine",
+        image: "images/merril-magazine.png",
+        desc: "description placeholder",
+        x: 80,
+        y: 23
+    },
+    {
+        name: "Porter Flyer",
+        image: "images/porter-flyer.png",
+        desc: "description placeholder",
+        x: 25,
+        y: 45
+    }
+];
 
-
-function updPage(name, desc, img) { //location will be added later
+function updPage(name, desc, img) {
     $("#desc").text(desc);
     $("#name").text(name);
     $("#thumb").attr("src", img);
-
-};
+}
 
 let count = 0;
 
-$("#left").click(function(){
+function showItem(index) {
+    count = index;
+    let thC = items[count];
+    updPage(thC.name, thC.desc, thC.image);
+
+    $(".point").removeClass("active");
+    $(`.point[data-index="${count}"]`).addClass("active");
+}
+
+// Create a clickable point on the map for each item using its x/y coordinates
+items.forEach(function (item, index) {
+    let $point = $("<button>", {
+        class: "point",
+        "data-index": index,
+        title: item.name,
+        "aria-label": item.name
+    }).css({
+        left: item.x + "%",
+        top: item.y + "%"
+    });
+
+    $point.click(function () {
+        showItem(index);
+    });
+
+    $("#map-wrapper").append($point);
+});
+
+// Show the first artifact on page load
+showItem(0);
+
+$("#left").click(function () {
     if (count > 0) {
-        count-=1;
-        let thC = items[count-1];
-        updPage(thC.name, thC.desc, thC.image);
+        showItem(count - 1);
     }
 });
 
-$("#right").click(function(){
-    if (count < items.length) {
-        count++;
-        let thC = items[count-1];
-        updPage(thC.name, thC.desc, thC.image);
-
-
+$("#right").click(function () {
+    if (count < items.length - 1) {
+        showItem(count + 1);
     }
 });
 
-$("#title").click(function(){
+
+$("#title").click(function () {
     $(this).fadeOut(1500);
-    setTimeout(function(){
-          $(this).toggleClass("invis");
-    },1500)
-  
+    setTimeout(function () {
+        $(this).toggleClass("invis");
+    }, 1500)
+
 })
